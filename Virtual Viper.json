@@ -182,7 +182,7 @@
         "alwaysLoaded": false,
         "file": "assets/assets_Images_Point.png",
         "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/assets_Images_Point.png\"}",
         "name": "assets\\Images\\Point",
         "smoothed": true,
         "userAdded": true
@@ -200,10 +200,71 @@
         "alwaysLoaded": false,
         "file": "assets/assets_Images_Block.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"assets/assets_Images_Block.png\",\"extension\":\".png\"}",
         "name": "assets\\assets_Images_Block.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/assets_Images_Point.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\assets_Images_Point.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/assets_Images_Point2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "assets\\Images\\Point2",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/assets_Images_Point3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "assets\\Images\\Point3",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Laser-weapon 8.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Laser-weapon/7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "file": "4603025393713152.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "4603025393713152.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/4603025393713152.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\4603025393713152.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -251,6 +312,12 @@
           "name": "Speed",
           "type": "number",
           "value": 0.25
+        },
+        {
+          "folded": true,
+          "name": "Dead",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -494,7 +561,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets\\Images\\Point",
+                      "image": "assets\\Images\\Point3",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -545,11 +612,12 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "",
+              "name": "assets\\assets_Images_Block",
               "useMultipleDirections": false,
               "directions": [
                 {
                   "looping": false,
+                  "metadata": "{\"pskl\":{}}",
                   "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
@@ -723,6 +791,27 @@
               "parameters": [
                 "PlayerHead",
                 "\"Movement\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Dead",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "assets\\4603025393713152.wav",
+                "yes",
+                "30",
+                ""
               ]
             }
           ]
@@ -1180,9 +1269,47 @@
                 "",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Dead",
+                "False"
+              ]
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Dead",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.1"
+              ]
+            },
             {
               "type": {
                 "value": "Scene"
@@ -1209,9 +1336,47 @@
                 "",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Dead",
+                "False"
+              ]
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Dead",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.1"
+              ]
+            },
             {
               "type": {
                 "value": "Scene"
