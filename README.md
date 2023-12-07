@@ -4,4 +4,5 @@ Our idea is a reimplementation/reskin of Snake, with an expansive use of it's me
 
 # Resources Used
 Used [How to make a snake game in GDevelop](https://www.youtube.com/watch?v=smjBQABMtq4) by shadow00dev as tutorial for basic, initial mechanics.
+
 [Sci Fi](https://www.bensound.com/royalty-free-music?type=free) by Benjamin Tissot as background music
